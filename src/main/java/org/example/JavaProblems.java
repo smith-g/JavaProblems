@@ -1,6 +1,8 @@
 package org.example;
 
+import javax.sound.sampled.ReverbType;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -62,6 +64,50 @@ public class JavaProblems {
 */
 
     public static int flippingTheMatrix(List<List<Integer>> matrix){
+
+        return 0;
+    }
+
+//    Permuting Two Arrays
+//There are two -element arrays of integers, and . Permute them into some and such that the relation holds for all where
+//
+//.
+//
+//There will be
+//queries consisting of , , and . For each query, return YES if some permutation , satisfying the relation exists. Otherwise, return NO.
+
+    public static String  twoArrays(int k, List<Integer> A, List<Integer> B){
+        Collections.sort(B, Collections.reverseOrder());
+
+        Collections.sort(A);
+
+        for(int i = 0; i < A.size(); i++){
+            if(A.get(i) + B.get(i) < k){
+                return "NO";
+            }
+        }
+
+        return "YES";
+    }
+
+
+
+
+
+
+
+
+//    Subarray Division 2
+//    Two children, Lily and Ron, want to share a chocolate bar. Each of the squares has an integer on it.
+//
+//    Lily decides to share a contiguous segment of the bar selected such that:
+//
+//    The length of the segment matches Ron's birth month, and,
+//    The sum of the integers on the squares is equal to his birth day.
+//
+//    Determine how many ways she can divide the chocolate.
+
+    public static int birthday(List<Integer> s, int m, int d){
 
         return 0;
     }
