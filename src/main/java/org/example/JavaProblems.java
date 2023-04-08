@@ -1,10 +1,10 @@
 package org.example;
 
-import javax.sound.sampled.ReverbType;
-import java.util.Arrays;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import java.util.Scanner;
 
 
 public class JavaProblems {
@@ -107,9 +107,47 @@ public class JavaProblems {
 //
 //    Determine how many ways she can divide the chocolate.
 
-    public static int birthday(List<Integer> s, int m, int d){
+    public static int birthday(List<Integer> s, int d, int m){
+        int count = 0;
 
-        return 0;
+
+        for(int i = 0; i <= s.size()-m; i++){
+            int num = 0;
+            for(int j = i; j < i+m; j++){
+                num = num + s.get(j);
+            }
+            if(num == d) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+
+
+//    XOR Strings Three
+//   In this challenge, the task is to debug the existing code to successfully execute all provided test files.
+//
+//  Given two strings consisting of digits 0 and 1 only, find the XOR of the two strings.
+//
+//  To know more about XOR Click Here
+//
+//  Debug the given function strings_xor to find the XOR of the two given strings appropriately.
+//
+//  Note: You can modify at most three lines in the given code and you cannot add or remove lines to the code.
+//
+//  To restore the original code, click on the icon to the right of the language selector.
+
+    public static String stringsXOR(String s, String t){
+        String res = new String("");
+        for(int i = 0; i < s.length(); i++) {
+            if(s.charAt(i) == t.charAt(i))
+                res += "0";
+            else
+                res += "1";
+        }
+        return res;
     }
 
 

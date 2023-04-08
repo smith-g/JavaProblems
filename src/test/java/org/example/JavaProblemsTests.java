@@ -39,4 +39,17 @@ public class JavaProblemsTests {
     public void flippingTheMatrix(){
 
     }
+
+    @Test
+    public void twoArrays(){}
+
+    @Test
+    public void birthday(){
+        assertEquals("Input: birthday(new ArrayList<>(Arrays.asList(1, 2, 1, 3, 2)), 3, 2))", 2, javaProblems.birthday(new ArrayList<>(Arrays.asList(1, 2,1,3,2)), 3, 2));
+    }
+
+    @Test
+    public void stringsXOR(){
+        assertEquals("Input: stringXOR(String \"10101\", String \"00101\")", "10000", javaProblems.stringsXOR("10101", "00101") );
+    }
 }
