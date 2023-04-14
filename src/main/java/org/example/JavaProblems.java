@@ -1,10 +1,7 @@
 package org.example;
 
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class JavaProblems {
@@ -149,7 +146,58 @@ public class JavaProblems {
         }
         return res;
     }
+//There is a large pile of socks that must be paired by color.
+// Given an array of integers representing the color of each sock,
+// determine how many pairs of socks with matching colors there are.
+
+    public static int sockMerchant( List<Integer> ar){
+        Collections.sort(ar);
+        int count = 0;
+
+        for(int i = 0; i < ar.size()  ; i++){
+            int num = ar.get(i);
+            for(int j = i + 1; j < ar.size() ; j++){
+                int num2 = ar.get(j);
+                if(num == num2){
+                    count++;
+                    ar.set(i, 0);
+                    ar.set(j, 0);
+                    break;
+                }
+            }
+        }
+
+        return count;
+    }
 
 
+//    Given an array of bird sightings where every element represents a bird type id,
+//    determine the id of the most frequently sighted type.
+//    If more than 1 type has been spotted that maximum amount, return the smallest of their ids.
+
+    public static int migratoryBirds(List<Integer> arr){
+        List<Integer> types = new ArrayList<>(Arrays.asList(0,0,0,0,0));
+
+        for(int i = 0; i < arr.size(); i++){
+            if (arr.get(i) == 1){
+                types.set(0, types.get(0) + 1);
+            }else if (arr.get(i) == 2){
+                types.set(1, types.get(1) + 1);
+            }else if (arr.get(i) == 3){
+                types.set(2, types.get(2) + 1);
+            }else if (arr.get(i) == 4){
+                types.set(3, types.get(3) + 1);
+            }else if (arr.get(i) == 5){
+                types.set(4, types.get(4) + 1);
+            }
+
+        }
+
+        int num = Collections.max(types);
+        int bird = types.indexOf(num);
+
+        return bird + 1;
+
+    }
 
 }

@@ -1,6 +1,7 @@
 package org.example;
 
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -51,5 +52,20 @@ public class JavaProblemsTests {
     @Test
     public void stringsXOR(){
         assertEquals("Input: stringXOR(String \"10101\", String \"00101\")", "10000", javaProblems.stringsXOR("10101", "00101") );
+    }
+
+    @Test
+    public void sockMerchant() {
+        assertEquals("Input: sockMerchant(1, 1, 3, 1, 2, 1, 3 , 3, 3, 3)", 4, javaProblems.sockMerchant(new ArrayList<>(Arrays.asList(1, 1, 3, 1, 2, 1, 3, 3, 3, 3))));
+        assertEquals("Input: sockMerchant(10, 20, 20, 10, 10, 30, 50, 10, 20)", 3, javaProblems.sockMerchant(new ArrayList<>(Arrays.asList(10, 20, 20, 10, 10, 30, 50, 10, 20))));
+        assertEquals("Input: sockMerchant(42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 " +
+                "42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42) ", 50, javaProblems.sockMerchant(new ArrayList<>(Arrays.asList(42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42))));
+    }
+
+    @Test
+    public void migratoryBirds(){
+        assertEquals("input: migratoryBirds(1 ,4 ,4 ,4 ,5 ,3)", 4, javaProblems.migratoryBirds(new ArrayList<>(Arrays.asList(1 ,4 ,4 ,4 ,5 ,3))));
+        assertEquals("input: migratoryBirds(1 ,2 ,3 ,4 ,5 ,4 ,3 ,2 ,1 ,3 ,4)", 3, javaProblems.migratoryBirds(new ArrayList<>(Arrays.asList(1 ,2 ,3 ,4 ,5 ,4 ,3 ,2 ,1 ,3 ,4))));
+
     }
 }
