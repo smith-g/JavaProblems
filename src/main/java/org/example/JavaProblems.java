@@ -199,5 +199,43 @@ public class JavaProblems {
         return bird + 1;
 
     }
+//Given an array of stick lengths, use of them to construct a non-degenerate triangle with the maximum possible perimeter. Return an array of the lengths of its sides as
+//
+//integers in non-decreasing order.
+//
+//If there are several valid triangles having the maximum perimeter:
+//
+//    Choose the one with the longest maximum side.
+//    If more than one has that maximum, choose from them the one with the longest minimum side.
+//    If more than one has that maximum as well, print any one them.
+//
+//If no non-degenerate triangle exists, return
+//.
+    public static List<Integer> maximumPerimeterTriangle(List<Integer> sticks){
+        List<Integer> ans = new ArrayList<>();
+
+        if(sticks.size() < 3) {
+            ans.add(-1);
+            return ans;
+        }
+        Collections.sort(sticks, Collections.reverseOrder());
+
+        int total = 0;
+        int num = 0;
+
+        for(int i = 0; i < sticks.size() - 2; i++){
+            total = sticks.get(i + 1) + sticks.get(i + 2);
+             num = sticks.get(i);
+            if(total > num){
+                ans.add(sticks.get(i + 2));
+                ans.add(sticks.get(i + 1));
+                ans.add(sticks.get(i));
+                return ans;
+            }
+        }
+
+        ans.add(-1);
+        return ans;
+    }
 
 }

@@ -68,4 +68,17 @@ public class JavaProblemsTests {
         assertEquals("input: migratoryBirds(1 ,2 ,3 ,4 ,5 ,4 ,3 ,2 ,1 ,3 ,4)", 3, javaProblems.migratoryBirds(new ArrayList<>(Arrays.asList(1 ,2 ,3 ,4 ,5 ,4 ,3 ,2 ,1 ,3 ,4))));
 
     }
+
+    @Test
+    public void maximumPerimeterTriangle(){
+
+        assertEquals("Input: maximumPerimeterTriangle(1, 1, 1, 3, 3)",new ArrayList<>(Arrays.asList(1 ,3, 3)),
+                javaProblems.maximumPerimeterTriangle(new ArrayList<>(Arrays.asList(1 ,1 ,1 ,3 ,3))));
+
+        assertEquals("Input: maximumPerimeterTriangle(1 , 2, 3)", new ArrayList<>(Arrays.asList(-1)),
+                javaProblems.maximumPerimeterTriangle(new ArrayList<>(Arrays.asList(1 , 2, 3))));
+
+        assertEquals("Input: maximumPerimeterTriangle(1 ,1 ,1 ,2 ,3 ,5)", new ArrayList<>(Arrays.asList(-1)),
+                javaProblems.maximumPerimeterTriangle(new ArrayList<>(Arrays.asList(1 , 2, 3))));
+    }
 }
